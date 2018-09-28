@@ -22,7 +22,7 @@ For dump any variable use short function **ff**.
 ff($your_variable);
 ``` 
 
-If you need dump your variable without clear output buffer and terminating program execute add set second parameter to false.
+If you need dump your variable without clear output buffer and terminating program execute add second parameter **false**.
 
 ```php
 ff($your_variable, false);
