@@ -6,10 +6,9 @@
  * Time: 14:10
  */
 
+namespace Dobrik\ExtendedDumper;
 
 use Symfony\Component\VarDumper\VarDumper;
-
-namespace Dobrik\ExtendedDumper;
 
 class Dumper
 {
@@ -18,9 +17,11 @@ class Dumper
      * @param $var mixed
      * @param bool $clear_buffer Clear output buffer
      */
-    public static function Dump($var, bool $clear_buffer = true)
+    public static function dump($var, bool $clear_buffer = true)
     {
         $trace = debug_backtrace();
+        /** First shift correct call from ff function */
+        array_shift($trace);
         $lastCall = array_shift($trace);
         $path = str_replace(__DIR__, '', $lastCall['file']);
 
@@ -29,8 +30,9 @@ class Dumper
         $data = array(
             'line' => $line,
             'file' => $path,
-            'properties' => $var,
-            'methods' => get_class_methods($var)
+            'variable' => $var,
+            'class_parent' => get_parent_class($var),
+            'class_methods' => get_class_methods($var)
         );
 
         if (!$clear_buffer) {

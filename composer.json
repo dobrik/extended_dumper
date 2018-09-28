@@ -12,7 +12,7 @@
   "license": "MIT",
   "require": {
     "php": ">=7.0",
-    "symfony/var-dumper": "^4.0"
+    "symfony/var-dumper": ">=4.0"
   },
   "authors": [
     {
