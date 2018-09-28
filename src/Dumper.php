@@ -6,10 +6,9 @@
  * Time: 14:10
  */
 
+namespace Dobrik\ExtendedDumper;
 
 use Symfony\Component\VarDumper\VarDumper;
-
-namespace Dobrik\ExtendedDumper;
 
 class Dumper
 {
