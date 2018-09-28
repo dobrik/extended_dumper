@@ -30,4 +30,4 @@ ff($your_variable, false);
 
 And you'll see something like this
 
-[[https://github.com/dobrik/extended_dumper/blob/master/media/img_1.jpg|alt=dump]]
+![Scheme](https://github.com/dobrik/extended_dumper/raw/master/media/img_1.jpg)
