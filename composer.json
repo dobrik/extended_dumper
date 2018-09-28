@@ -2,21 +2,30 @@
   "name": "dobrik/extended-dumper",
   "type": "library",
   "description": "Symfony var dumper with extended data.",
-  "keywords": ["dump", "variable", "class", "property"],
+  "keywords": [
+    "dump",
+    "variable",
+    "class",
+    "property"
+  ],
   "homepage": "https://github.com/dobrik",
   "license": "MIT",
   "require": {
     "php": ">=7.0",
-    "symfony/var-dumper": ">=4.0"
+    "symfony/var-dumper": "^4.0"
   },
+  "authors": [
+    {
+      "name": "Alexey Dobrovolsky",
+      "email": "dobrik1990@gmail.com"
+    }
+  ],
   "autoload": {
-    "files": [ "src/functions.php" ],
-    "psr-4": { "Dobrik\\ExtendedDumper\\": "src/" }
-  },
-  "minimum-stability": "dev",
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0-dev"
+    "files": [
+      "src/functions.php"
+    ],
+    "psr-4": {
+      "Dobrik\\ExtendedDumper\\": "src/"
     }
   }
 }
