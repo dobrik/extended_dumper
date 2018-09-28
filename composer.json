@@ -1,0 +1,17 @@
+{
+  "name": "dobrik/extended-dumper",
+  "description": "Symfony var dumper with extended data.",
+  "keywords": ["dump", "variable", "class", "property"],
+  "homepage": "https://github.com/dobrik",
+  "version": "0.0.1",
+  "license": "GNU",
+  "require": {
+    "symfony/var-dumper": "=>^4.0"
+  },
+  "autoload": {
+    "classmap": [
+      "каталог-с-вашими-файлами/",
+      "или-отдельно-каждый-файл.php"
+    ]
+  }
+}
