@@ -3,7 +3,6 @@
   "description": "Symfony var dumper with extended data.",
   "keywords": ["dump", "variable", "class", "property"],
   "homepage": "https://github.com/dobrik",
-  "version": "0.0.1",
   "license": "MIT",
   "require": {
     "php": ">=7.0",
@@ -12,5 +11,10 @@
   "autoload": {
     "files": [ "src/functions.php" ],
     "psr-4": { "Dobrik\\ExtendedDumper\\": "src/" }
+  },
+  "extra": {
+    "branch-alias": {
+      "master": "1.0"
+    }
   }
 }
