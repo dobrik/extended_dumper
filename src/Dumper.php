@@ -17,9 +17,11 @@ class Dumper
      * @param $var mixed
      * @param bool $clear_buffer Clear output buffer
      */
-    public static function Dump($var, bool $clear_buffer = true)
+    public static function dump($var, bool $clear_buffer = true)
     {
         $trace = debug_backtrace();
+        /** First shift correct call from ff function */
+        array_shift($trace);
         $lastCall = array_shift($trace);
         $path = str_replace(__DIR__, '', $lastCall['file']);
 
