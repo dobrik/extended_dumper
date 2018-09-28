@@ -13,18 +13,12 @@ namespace Dobrik\ExtendedDumper;
 
 class Dumper
 {
-    /**
-     *
-     * Clear output buffer
-     *
-     * @var bool
-     */
-    private static $clear = true;
 
     /**
      * @param $var mixed
+     * @param bool $clear_buffer Clear output buffer
      */
-    public static function Dump($var)
+    public static function Dump($var, bool $clear_buffer = true)
     {
         $trace = debug_backtrace();
         $lastCall = array_shift($trace);
@@ -39,7 +33,7 @@ class Dumper
             'methods' => get_class_methods($var)
         );
 
-        if (!self::$clear) {
+        if (!$clear_buffer) {
             VarDumper::dump($data);
         }
         while (ob_get_level()) {
