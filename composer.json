@@ -13,6 +13,7 @@
     "files": [ "src/functions.php" ],
     "psr-4": { "Dobrik\\ExtendedDumper\\": "src/" }
   },
+  "minimum-stability": "dev",
   "extra": {
     "branch-alias": {
       "dev-master": "master-dev"
