@@ -30,8 +30,9 @@ class Dumper
         $data = array(
             'line' => $line,
             'file' => $path,
-            'properties' => $var,
-            'methods' => get_class_methods($var)
+            'variable' => $var,
+            'class_parent' => get_parent_class($var),
+            'class_methods' => get_class_methods($var)
         );
 
         if (!$clear_buffer) {
