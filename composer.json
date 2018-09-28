@@ -1,5 +1,6 @@
 {
   "name": "dobrik/extended-dumper",
+  "type": "library",
   "description": "Symfony var dumper with extended data.",
   "keywords": ["dump", "variable", "class", "property"],
   "homepage": "https://github.com/dobrik",
