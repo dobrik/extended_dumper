@@ -11,8 +11,11 @@ if (!function_exists('ff')) {
      * @param $var mixed
      * @param bool $clear_buffer Clear output buffer
      */
-    function ff($var, bool $clear_buffer = true)
+    function ff(...$var)
     {
-        Dobrik\ExtendedDumper\Dumper::Dump($var, $clear_buffer);
+        if(count($var) === 1){
+            $var = $var[0];
+        }
+        Dobrik\ExtendedDumper\Dumper::Dump($var);
     }
 }
