@@ -48,7 +48,7 @@ class Dumper
         $methods = [];
         /** @var \ReflectionMethod $method */
         foreach ($reflection->getMethods() as $method) {
-            $methods[] = sprintf('%s (%s)%s', $method->getName(), self::formatParameters($method->getParameters()), self::getReturnType($method));
+            $methods[] = sprintf('%s(%s)%s', $method->getName(), self::formatParameters($method->getParameters()), self::getReturnType($method));
         }
 
         return [
@@ -67,22 +67,31 @@ class Dumper
             if ($parameter->hasType()) {
                 $tmp .= $parameter->getType() . ' ';
             }
-            $tmp .= $parameter->getName();
+            $tmp .= '$' . $parameter->getName();
 
             if ($parameter->isDefaultValueAvailable()) {
-                $tmp .= ' = ' . $parameter->getDefaultValue();
+                $tmp .= ' = ' . self::formatDefaultParameterValue($parameter->getDefaultValue());
             }
             $returnArray[] = $tmp;
         }
-        return '(' . implode(', ', $returnArray) . ')';
+        return implode(', ', $returnArray);
     }
 
     private static function getReturnType(\ReflectionMethod $method)
     {
         if ($method->hasReturnType()) {
-            return ':' . $method->getReturnType();
+            return ': ' . $method->getReturnType();
         }
 
         return '';
+    }
+
+    private static function formatDefaultParameterValue($defaultValue)
+    {
+        if (is_string($defaultValue) || is_numeric($defaultValue)) {
+            return $defaultValue;
+        }
+
+        return gettype($defaultValue);
     }
 }
