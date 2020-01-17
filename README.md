@@ -19,13 +19,13 @@ _Basically uses Symfony var-dumper_ https://github.com/symfony/var-dumper
 For dump any variable use short function **ff**.
 
 ```php
-ff($your_variable);
+ff(...$your_variables);
 ``` 
 
 If you need dump your variable without clear output buffer and terminating program execute add second parameter **false**.
 
 ```php
-ff($your_variable, false);
+ff(...$your_variables);
 ```
 
 And you'll see something like this
