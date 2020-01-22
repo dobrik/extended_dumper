@@ -65,7 +65,11 @@ class Dumper
             $tmp = '';
 
             if ($parameter->hasType()) {
-                $tmp .= $parameter->getType() . ' ';
+                $returnType = $parameter->getType();
+                if($returnType instanceof \ReflectionNamedType){
+                    $returnType = $returnType->getName();
+                }
+                $tmp .= $returnType . ' ';
             }
             $tmp .= '$' . $parameter->getName();
 
@@ -80,7 +84,11 @@ class Dumper
     private static function getReturnType(\ReflectionMethod $method)
     {
         if ($method->hasReturnType()) {
-            return ': ' . $method->getReturnType();
+            $returnType = $method->getReturnType();
+            if($returnType instanceof \ReflectionNamedType){
+                $returnType = $returnType->getName();
+            }
+            return ': ' . $returnType;
         }
 
         return '';
