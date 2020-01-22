@@ -9,25 +9,27 @@
     - file where dump called
     - dumped variable or object detailed information
     - parent class of object
-    - class public methods
+    - class public methods with arguments
 
 _Basically uses Symfony var-dumper_ https://github.com/symfony/var-dumper
 
 
 # Using
 
-For dump any variable use short function **ff**.
+For dump any variable or few variables use short function **ff**.
 
 ```php
-ff($your_variable);
+ff($var);
 ``` 
 
-If you need dump your variable without clear output buffer and terminating program execute add second parameter **false**.
+And you'll see something like this
+![Scheme](https://github.com/dobrik/extended_dumper/raw/master/media/img_1.jpg)
+
+Or
 
 ```php
-ff($your_variable, false);
-```
+ff($var1, $var2);
+``` 
 
-And you'll see something like this
+In this case your variables will be dumped as array and methods don't be shown.
 
-![Scheme](https://github.com/dobrik/extended_dumper/raw/master/media/img_1.jpg)
